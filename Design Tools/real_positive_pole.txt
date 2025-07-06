@@ -1,0 +1,35 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the normalized frequency vector (logarithmic scale)
+w_over_p = np.logspace(-2, 2, 500)  # Frequency range from 10^-2 to 10^2
+
+# Calculate the transfer function response for a positive pole
+H = 1 / (1 + 1j * w_over_p)
+
+# Magnitude in dB
+magnitude_db = 20 * np.log10(np.abs(H))
+
+# Phase in degrees (for positive real pole, phase increases)
+phase_deg = np.angle(H, deg=True)  # Convert radians to degrees
+phase_deg = -phase_deg  # Invert the phase for a positive real pole
+
+# Create the figure for plotting
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8))
+
+# Plot the magnitude response
+ax1.semilogx(w_over_p, magnitude_db, 'k', linewidth=2)
+ax1.set_title('Frequency Response of 1/(1 + jw/p) for a Positive Real Pole')
+ax1.set_ylabel('Magnitude (dB)')
+ax1.grid(True)
+
+# Plot the phase response
+ax2.semilogx(w_over_p, phase_deg, 'k', linewidth=2)
+ax2.set_ylabel('Phase (degrees)')
+ax2.set_xlabel('Normalized Frequency ω/p')
+ax2.grid(True)
+
+# Show the plot
+plt.tight_layout()
+plt.show()
+
