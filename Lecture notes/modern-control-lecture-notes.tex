@@ -1,0 +1,126 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage[a4paper, top=2cm, bottom=2cm, right=2cm, left=2cm]{geometry}
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{float}
+\usepackage{soul}
+\usepackage[makeroom]{cancel}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathtools}
+\usepackage{matlab-prettifier}
+\usepackage{subcaption}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{colortbl} % for cell color in matrices
+\usepackage{tcolorbox} % **Added tcolorbox package**
+\usepackage{setspace}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta, positioning}
+\usepackage{amsmath} % For better math formatting
+
+
+\usetikzlibrary{positioning}
+\setstretch{1.2}
+\definecolor{myblue}{RGB}{30, 131, 197}
+\definecolor{mygreen}{HTML}{25da18}
+\definecolor{myyellow}{RGB}{255, 255, 0}
+\definecolor{mygrey}{RGB}{100, 100, 100}
+\definecolor{myred}{RGB}{255, 55, 55}
+
+\newtcolorbox{factbox}[1][]{
+    colback=mygreen!5,   % Background color
+    colframe=mygreen!30, % Frame color
+    fonttitle=\bfseries,  % Title font
+    title=#1,             % Title
+    coltitle = black,   %title color
+    sharp corners=southwest,
+}
+\newtcolorbox{QandAbox}[1][]{
+    colback=myred!5,   % Background color
+    colframe=myred!20, % Frame color
+    fonttitle=\bfseries,  % Title font
+    title=#1,             % Title
+    coltitle = black,   %title color
+    sharp corners=southwest,
+}
+
+\newtcolorbox{example}[1][]{
+    colback=mygrey!3,   % Background color
+    colframe=mygrey!20, % Frame color
+    fonttitle=\bfseries,  % Title font
+    title=#1,             % Title
+    coltitle = black,   %title color
+    sharp corners=southwest,
+}
+
+% Do not indent paragraphs
+\usepackage[parfill]{parskip}
+
+% In case of an image at the bottom, but the footnote below the image (without this the image will be below the footnote)
+\usepackage[bottom]{footmisc}
+
+% --------- CUSTOM HEADER ----------
+\input{customizations/header.tex}
+
+% ------------ NEW ENVS ------------
+\input{customizations/environment.tex}
+
+% ---------- NEW COMMANDS ----------
+\input{customizations/commands.tex}
+
+
+% Make references clickable and change style of links to blue
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+
+\graphicspath{ {images/} }
+
+\input{customizations/title-spacing.tex}
+
+\title{
+    \textbf{\Huge{Modern Design of Control Systems}}\\
+    \textit{Lecture notes}
+}
+\author{A. Ayanmanesh Motlaghmofrad}
+\date{A.Y. 2024/2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+% ---------------------------------------------------------------------
+% ------------------------ MODIFY ONLY BELOW --------------------------
+% ---------------------------------------------------------------------\textbf{•}
+
+\input{chapters/introduction}
+\input{chapters/part-01.tex}
+\input{chapters/part-02.tex}
+\input{chapters/part-04.tex}
+\input{chapters/part-05.tex}
+\input{chapters/part-06.tex}
+
+% ---------------------------------------------------------------------
+% ---------------------------------------------------------------------
+% ---------------------------------------------------------------------
+
+% Declare appendix and set the equation counter format to (A.section.eqNumber)
+\appendix
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+
+\end{document}

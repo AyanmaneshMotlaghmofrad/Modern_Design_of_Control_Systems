@@ -1,0 +1,24 @@
+\chapter{Introduction to the course}
+
+\subsubsection{Control problem formulation}
+Control requires an action, just measuring the output is not enough. The word "controllare" in Italian means "checking"; it does not involve the act of acting, which in our context is necessary.\\
+An audio amplifier is control system that should track the voice signal, entered as voltage.\\
+
+When designing an controller in frequency domain, the requirements are transformed into those of frequency domain, and the the controller is designed accordingly. In the following step, a simulation in the time-domain is done, since the final goal of the controller is that it have an acceptable performance while performing real-time.\\
+
+Here, the axiomatic definition of the system and control theory is not discussed. That is, the practical aspect of the control design is the objective of this course. Further, in the exam, students are asked to design a controller.\\
+
+Just to have an idea what a system is, a system can be considered as a function that maps the input signal sequence to a new output signal sequence.\\
+
+\subsubsection{Regulation problem}
+Every control system with a constant reference is called a regulator, and the problem is classified as a regulation problem, e.g. voltage adaptor of a laptop or phone.\\
+
+\subsubsection{Tracking problem}
+If the reference intput is not a constant signal, the problem at hand is classified as tracking problem.\\
+
+\subsubsection{Noise and sensors}
+If it was not for noise effect and uncertainties regarding the system model, a suitable input for system would be found so that the output act as it is desired. That is why accurate sensors should be used, if possible, to realize a feedback structure.11
+
+
+\subsubsection{Considerations regarding the input of the plant}
+consider that the actuator used to act on the plant cannot provide any input. Therefore, once the controller is designed the bound of the input of the system, \(u(t)\), should be checked. This bound affect the cost considerations, since stronger actuators tends to be more expensive.
