@@ -6,7 +6,8 @@ The homeworks and practices done for the course with this title
 - Simulink 
 
 ## How to Run
-Run each the matlab file of each problem section by section to see the progress
+- Download the design tools and add it to you matlab path
+- Run each the matlab file of each problem section by section to see the progress
 
 ## Author
 Amirhossein Ayanmanesh Motlaghmofrad
